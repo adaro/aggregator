@@ -5,7 +5,6 @@ from utils import MovieSearch, NprFeed
 
 #cash these
 movies = MovieSearch()
-print movies.data
 npr = NprFeed()
 
 
