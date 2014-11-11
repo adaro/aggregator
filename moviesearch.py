@@ -3,7 +3,7 @@ from flask import json, render_template
 import csv, fnmatch
 from utils import MovieSearch, NprFeed
 
-#cash these
+#TODO: cache these
 movies = MovieSearch()
 npr = NprFeed()
 
