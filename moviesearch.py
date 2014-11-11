@@ -1,6 +1,4 @@
-from flask import Flask, request, jsonify
-from flask import json, render_template
-import csv, fnmatch
+from flask import Flask, request, json, render_template
 from utils import MovieSearch, NprFeed
 
 #TODO: cache these
