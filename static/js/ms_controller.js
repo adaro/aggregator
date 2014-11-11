@@ -2,21 +2,21 @@
 
 //CONTROLLERS
 function MSController($scope, $filter, msServices) {
-	$scope.display = msServices.display; // show/hide state object
-	$scope.searchText = msServices.searchText; // searchText object
-	$scope.messages = msServices.messages // messages singleton object
-	$scope.submitted = msServices.submitted; // submitted singleton object
-	$scope.history = msServices.history; // history singleton object
-	$scope.tableData = []; // Array used for storing filtered data
-  var moviePromise = msServices.getMSData(); //use msServices to get csv data
-  moviePromise.then(function (data) {
-      $scope.movieData = data; // movieData
-  });
-  var moviePromise = msServices.getRssData(); //use msServices to get csv data
-  moviePromise.then(function (data) {
-		$scope.rssData = data; // movieData
-		console.log($scope.rssData)
-	});
+    $scope.display = msServices.display; // show/hide state object
+    $scope.searchText = msServices.searchText; // searchText object
+    $scope.messages = msServices.messages // messages singleton object
+    $scope.submitted = msServices.submitted; // submitted singleton object
+    $scope.history = msServices.history; // history singleton object
+    $scope.tableData = []; // Array used for storing filtered data
+    var moviePromise = msServices.getMSData(); //use msServices to get csv data
+    moviePromise.then(function (data) {
+        $scope.movieData = data; // movieData
+      });
+      var moviePromise = msServices.getRssData(); //use msServices to get csv data
+      moviePromise.then(function (data) {
+          $scope.rssData = data; // movieData
+	  console.log($scope.rssData)
+       });
 
 	$(".sidebar").bind("mousewheel", function (ev, delta) {
 	    var scrollTop = $(window).scrollTop();
