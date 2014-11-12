@@ -44,8 +44,8 @@ msApp.factory('msServices', function ($http) {
 				return results.data;
 			});
 		},
-		postVsn: function (data) {
-            return $http.post('/post', {data: data}, {
+		postMs: function (data) {
+            		return $http.post('/post', {data: data}, {
 
 				})
                 .then(function (result) {
