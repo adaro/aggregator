@@ -18,11 +18,6 @@ function MSController($scope, $filter, msServices) {
 	  console.log($scope.rssData)
        });
 
-	$(".sidebar").bind("mousewheel", function (ev, delta) {
-	    var scrollTop = $(window).scrollTop();
-	    $(window).scrollTop(scrollTop - Math.round(delta * 20));
-	});
-
 	$scope.validateForm = function(searchtext, form, hist) {
 		// function used for validating/posting "searchtext"
 		$scope.history.lastSearched = searchtext;
