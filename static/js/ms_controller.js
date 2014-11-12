@@ -40,7 +40,7 @@ function MSController($scope, $filter, msServices) {
 
 	$scope.postPromise = function (searchtext) {
 		// post searchtext to server
-		var postPromise = msServices.postmovie(searchtext) // post searchtext
+		var postPromise = msServices.postMs(searchtext) // post searchtext
 		postPromise.then(function(data) {
 			$scope.tableData = data.response_data
 			if ($scope.tableData.length === 0) { // post returned 0 results
