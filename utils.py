@@ -15,7 +15,7 @@ class MovieSearch(object):
     self.data = self.get_data()
 
   def get_movies(self):
-    url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=sue27hvce56x25xxwsdewuc6"
+    url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=<YOUR API KEY HERE>"
     response = urllib2.urlopen(url)
     data = json.loads(response.read())
     return data
