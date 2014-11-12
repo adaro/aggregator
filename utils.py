@@ -83,7 +83,7 @@ class NprFeed(object):
 
   def fetch_item(self):
     #Data Layer for fetching RSS feed
-    wd_xml = urllib2.urlopen('http://api.npr.org/query?id=1007&apiKey=MDE3Mjc3Nzk4MDE0MTQ5MTIyNjkzM2M1Ng001')
+    wd_xml = urllib2.urlopen('http://api.npr.org/query?id=1007&apiKey=<YOUR API KEY HERE>')
     #convert to string:
     xml_data = wd_xml.read()
     wd_xml.close()
