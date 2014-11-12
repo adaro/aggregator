@@ -19,19 +19,16 @@ class MovieSearch(object):
     response = urllib2.urlopen(url)
     data = json.loads(response.read())
     return data
-
-
+    
   def get_imgs(self, html):
     total = 0
     # This next line is not ideal. Would much rather use a lib such as Beautiful Soup for this
     total += len(re.findall(r"<img[^>]*>", html))
     return total
 
-
   def read_url(self, url, queue):
     data = urllib2.urlopen(url).read()
     queue.put(data)
-
 
   def fetch_urls(self):
     result = Queue.Queue()
@@ -42,7 +39,6 @@ class MovieSearch(object):
         thread.join()
     return result
 
-
   def get_data(self):
     movies = self.get_movies()
     for movie in movies["movies"]:
@@ -50,12 +46,11 @@ class MovieSearch(object):
         URLS.append(url)
 	# queue = fetch_urls()
     while movies["movies"]:
-		    movie = movies["movies"].pop()
-		    MOVIES.append(movie)
+    	movie = movies["movies"].pop()
+	MOVIES.append(movie)
     return MOVIES
-
-
-
+    
+    
 class NprFeed(object):
 
   """
