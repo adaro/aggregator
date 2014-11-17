@@ -17,23 +17,20 @@ class MovieSearch(object):
     self.data = self.get_data()
 
   def get_movies(self):
-    url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=sue27hvce56x25xxwsdewuc6"
+    url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=<YOUR API KEY HERE>"
     response = urllib2.urlopen(url)
     data = json.loads(response.read())
     return data
-
-
+    
   def get_imgs(self, html):
     total = 0
     # This next line is not ideal. Would much rather use a lib such as Beautiful Soup for this
     total += len(re.findall(r"<img[^>]*>", html))
     return total
 
-
   def read_url(self, url, queue):
     data = urllib2.urlopen(url).read()
     queue.put(data)
-
 
   def fetch_urls(self):
     result = Queue.Queue()
@@ -44,7 +41,6 @@ class MovieSearch(object):
         thread.join()
     return result
 
-
   def get_data(self):
     movies = self.get_movies()
     for movie in movies["movies"]:
@@ -52,12 +48,11 @@ class MovieSearch(object):
         URLS.append(url)
 	# queue = fetch_urls()
     while movies["movies"]:
-		    movie = movies["movies"].pop()
-		    MOVIES.append(movie)
+    	movie = movies["movies"].pop()
+	MOVIES.append(movie)
     return MOVIES
-
-
-
+    
+    
 class NprFeed(object):
 
   """
@@ -85,7 +80,7 @@ class NprFeed(object):
 
   def fetch_item(self):
     #Data Layer for fetching RSS feed
-    wd_xml = urllib2.urlopen('http://api.npr.org/query?id=1007&apiKey=MDE3Mjc3Nzk4MDE0MTQ5MTIyNjkzM2M1Ng001')
+    wd_xml = urllib2.urlopen('http://api.npr.org/query?id=1007&apiKey=<YOUR API KEY HERE>')
     #convert to string:
     xml_data = wd_xml.read()
     wd_xml.close()
