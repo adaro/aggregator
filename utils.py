@@ -104,4 +104,4 @@ class NprFeed(object):
         xml_feed_dict[key.tag] = key.text
       xml_feed_dict["thumbnail"] = entry[1][0].text
       entries.append(xml_feed_dict)
-    return entries
+    return entries 
