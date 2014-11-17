@@ -2,58 +2,14 @@
 
 <html lang="en" ng-app="mSearch">
 	<head>
-		<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-		<link type="text/css" rel="stylesheet" href="static/css/style.css"/>
-
-		<script src="http://platform.tumblr.com/v1/share.js"></script>
-
-
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="static/css/style.css"/>
+	<script src="http://platform.tumblr.com/v1/share.js"></script>
 	</head>
 	<body ng-controller="MSController">
-
-
 	 <script>
-	// 	window.fbAsyncInit = function() {
-	// 		FB.init({
-	// 			appId      : '1568501626697755',
-	// 			xfbml      : true,
-	// 			version    : 'v2.2'
-	// 		});
-	//
-	// 	FB.getLoginStatus(function(response) {
-	// 	  if (response.status === 'connected') {
-	// 	    console.log('Logged in.');
-	// 	  }
-	// 	  else {
-	// 	    FB.login();
-	// 	  }
-	// 	});
-  // 	FB.ui({
-  //    method: 'share_open_graph',
-  //    action_type: 'og.likes',
-  //    action_properties: JSON.stringify({
-  //     object:'https://developers.facebook.com/apps/1568501626697755/',
-  //    })
-  //   }, function(response){});
-	// 		FB.ui(
-	// 		 {
-	// 		  method: 'share',
-	// 		  href: 'https://developers.facebook.com/apps/1568501626697755/'
-	// 		}, function(response){});
-	//
-	// 		// ADD ADDITIONAL FACEBOOK CODE HERE
-	// 	};
-	//
-	// 	(function(d, s, id){
-	// 		var js, fjs = d.getElementsByTagName(s)[0];
-	// 		if (d.getElementById(id)) {return;}
-	// 		js = d.createElement(s); js.id = id;
-	// 		js.src = "//connect.facebook.net/en_US/sdk.js";
-	// 		fjs.parentNode.insertBefore(js, fjs);
-	// 	}(document, 'script', 'facebook-jssdk'));
+	 
 	</script>
-
-
 		<nav class="navbar navbar-default" role="navigation">
 		  <div class="container-fluid">
 			<div class="navbar-header">
@@ -67,7 +23,7 @@
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			  <form name="myForm" class="navbar-form navbar-left" role="search" ng-submit="validateForm(searchText['Serial Number Pattern'], myForm)">
+			  <form name="myForm" class="navbar-form navbar-left" role="search" ng-submit="validateForm(searchText['key'], myForm)">
 				 <div class="col-lg-6">
 					<div class="input-group">
 					  <input name="movie_input" type="text"
@@ -92,7 +48,7 @@
 					<li class="dropdown">
 					  <a href="" class="dropdown-toggle" ng-show="history.lastSearchedArray.length > 0" data-toggle="dropdown">Search History <span class="caret"></span></a>
 					  <ul class="dropdown-menu" role="menu">
-							<li><a ng-repeat="hist in history.lastSearchedArray" ng-bind="hist" ng-click="validateForm(hist, myForm, 'hist')"></a></li>
+					      <li><a ng-repeat="hist in history.lastSearchedArray" ng-bind="hist" ng-click="validateForm(hist, myForm, 'hist')"></a></li>
 					  </ul>
 					</li>
 
@@ -110,17 +66,6 @@
 
 					<div class="btn-group" role="group" google-plus></div>
 				</div>
-			  <!-- <ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-				  <a href="" class="dropdown-toggle" data-toggle="dropdown"> Search <span class="caret"></span></a>
-				  <ul class="dropdown-menu" role="menu">
-					<li><a ng-click="display.rss = true; display.movies = false">NPR</a></li>
-					<li><a ng-click="display.movies = true; display.rss = false">Movies</a></li>
-
-					</li>
-				  </ul>
-				</li>
-			  </ul> -->
 			</div>
 		  </div>
 		</nav>
@@ -173,23 +118,8 @@
 		<br clear="both">
 		<br clear="both">
 
-		 <!-- <div class="center" ng-show="display.rss">
-			<div data-toggle="table" data-url="data1.json" data-cache="false" data-height="299" class="table condensed">
-				<div>
-					{% raw %}
-
-					<div ng-repeat="rss in rssData | filter:searchText">
-						<div ><a href="{{rss.link}}"><img class="imgs" ng-src="{{rss.thumbnail}}"></a></div>
-						<br>
-						<div ng-bind="rss.title"></div>
-						<br>
-					</div>
-					{% endraw %}
-				</div>
-			</div>
-		</div> -->
 		<br clear="both">
-	<!-- <div ng-show="showNone" class="alert alert-danger" ng-bind="messages.noneFound"></div> -->
+		<!-- <div ng-show="showNone" class="alert alert-danger" ng-bind="messages.noneFound"></div> -->
 		<div id="footer">
 			<p class="pull-right">
 				Movie <b>search<b>
