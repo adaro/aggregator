@@ -1,17 +1,11 @@
-from flask import Flask, request, json, render_template
+from flask import Flask, request, jsonify
+from flask import json, render_template
+import csv, fnmatch
 from utils import MovieSearch, NprFeed
 #from post_blog import post_tmblr
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 #cache these
-=======
-#TODO: cache these
->>>>>>> origin/master
-=======
-#TODO: cache these
->>>>>>> origin/master
 movies = MovieSearch()
 npr = NprFeed()
 
