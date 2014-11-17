@@ -3,8 +3,12 @@
 //MODULE
 // Setting up our angular module.
 // This is where we would depndency inject other modules.
-var msApp = angular.module('mSearch', []);
-
+var msApp = angular.module('mSearch', ['angulike']);
+msApp.run([
+      '$rootScope', function ($rootScope) {
+          $rootScope.facebookAppId = '1568501626697755'; // set your facebook app id here
+      }
+  ]);
 //SERVICES
 // facotry service used for passing our singletons,
 // along with get and post objects to the controller
@@ -25,6 +29,16 @@ msApp.factory('msServices', function ($http) {
 		history: {
 			lastSearched: "",
 			lastSearchedArray: [],
+		},
+		postTumblr: function() {
+			return $http.post('/post_tumblr', {data: ""}, {
+
+			})
+					.then(function (result) {
+							//resolve the promise as the result
+							return result.data;
+
+					});
 		},
 		getMSData: function () {
 			//return the promise directly.

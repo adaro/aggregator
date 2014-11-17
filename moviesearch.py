@@ -2,14 +2,16 @@ from flask import Flask, request, jsonify
 from flask import json, render_template
 import csv, fnmatch
 from utils import MovieSearch, NprFeed
+#from post_blog import post_tmblr
 
-#cash these
+
+#cache these
 movies = MovieSearch()
-print movies.data
 npr = NprFeed()
 
 
 app = Flask(__name__)
+
 @app.route('/', methods=['GET'])
 def render_html():
    return render_template('moviesearch.html')
@@ -19,6 +21,14 @@ def post():
     jsonout = json.loads(request.data)
     final = []
     response_data = json.dumps({"response_data": final})
+    return response_data
+
+@app.route('/post_tumblr', methods=['POST'])
+def post_tumblr():
+    # jsonout = json.loads(request.data)
+    final = []
+    tumblr = post_tmblr()
+    response_data = json.dumps({"response_data": ""})
     return response_data
 
 @app.route('/get', methods=['GET'])

@@ -10,6 +10,8 @@ JSON_LIST = list()
 URLS = list()
 MOVIES = list()
 
+
+
 class MovieSearch(object):
   def __init__(self):
     self.data = self.get_data()

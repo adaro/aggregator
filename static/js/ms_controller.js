@@ -18,10 +18,14 @@ function MSController($scope, $filter, msServices) {
 		console.log($scope.rssData)
 	});
 
-	$(".sidebar").bind("mousewheel", function (ev, delta) {
-	    var scrollTop = $(window).scrollTop();
-	    $(window).scrollTop(scrollTop - Math.round(delta * 20));
-	});
+
+	$scope.postTum = function () {
+		var moviePromise = msServices.postTumblr(); //use msServices to get csv data
+		moviePromise.then(function (data) {
+			console.log(data)
+				$scope.tum = data; // movieData
+		});
+	}
 
 	$scope.validateForm = function(searchtext, form, hist) {
 		// function used for validating/posting "searchtext"
@@ -39,7 +43,8 @@ function MSController($scope, $filter, msServices) {
 			form.$error.maxlength = true;
 		}
 		else {
-			$scope.postPromise(searchtext)
+			// $scope.postPromise(searchtext) // serverside post (we'll stick to
+																				//angular filtering for this small data set)
 		}
 	}
 
