@@ -3,8 +3,12 @@ from utils import MovieSearch, NprFeed
 #from post_blog import post_tmblr
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #cache these
+=======
+#TODO: cache these
+>>>>>>> origin/master
 =======
 #TODO: cache these
 >>>>>>> origin/master

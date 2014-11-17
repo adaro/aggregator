@@ -3,6 +3,7 @@
 //CONTROLLERS
 function MSController($scope, $filter, msServices) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$scope.display = msServices.display; // show/hide state object
 	$scope.searchText = msServices.searchText; // searchText object
 	$scope.messages = msServices.messages // messages singleton object
@@ -28,6 +29,8 @@ function MSController($scope, $filter, msServices) {
 		});
 	}
 =======
+=======
+>>>>>>> origin/master
     $scope.display = msServices.display; // show/hide state object
     $scope.searchText = msServices.searchText; // searchText object
     $scope.messages = msServices.messages // messages singleton object
@@ -43,6 +46,9 @@ function MSController($scope, $filter, msServices) {
           $scope.rssData = data; // movieData
 	  console.log($scope.rssData)
        });
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 
 	$scope.validateForm = function(searchtext, form, hist) {
