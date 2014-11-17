@@ -90,10 +90,10 @@ class TumblrNprRssFeed(object):
 
  # Authenticate via OAuth
 client = pytumblr.TumblrRestClient(
-  '028bbZUIvbk5rc9xyBS1bqVVWBkCyB2KXiNUSJ8LYmn1neBILb',
-  '3rxSPyMMFD0104j53aKtPZrSjQChrE6pW7OqwMHE0i6mMsRJmF',
-  'Viux5LuXGSPqzpZVFrvVyJDMCUvX9rBTemllcvZ6iyLwfnNYxl',
-  'zrWzG3WYsLV30pbcVkzgANqQ7Ekii1GhWX6g90hVuDKLeCh1Lk'
+  '', # Client keys here
+  '',
+  '',
+  ''
 )
 
 def post_tmblr():
@@ -103,10 +103,10 @@ def post_tmblr():
       try:
           if type(i["description"]) == 'unicode':
               i["description"] = "Not Avail"
-              client.create_photo('alexdaro.tumblr.com', state="published", tags=
+              client.create_photo('<user>.tumblr.com', state="published", tags=
   						["npr", "news"], caption=i['title'], link=i['link'], source=i['url'])
           else:
-              client.create_photo('alexdaro.tumblr.com', state="published", tags=
+              client.create_photo('<user>.tumblr.com', state="published", tags=
   						["npr", "news"], caption=i['title'], link=i['link'], source=i['url'])
       except Exception, error:
               print error
