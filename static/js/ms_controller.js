@@ -75,3 +75,4 @@ function MSController($scope, $filter, msServices) {
 		}
 	}
 }
+
