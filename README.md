@@ -3,7 +3,7 @@ aggregator
 
 frame work for reading APIs and RSS feeds 
 
-Dependencies: python2.6, flask, pytumblr
+Dependencies: python2.6, flask, pytumblr, facebook app id
 
 Usage: 
 
