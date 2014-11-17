@@ -2,23 +2,21 @@
 
 //CONTROLLERS
 function MSController($scope, $filter, msServices) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 	$scope.display = msServices.display; // show/hide state object
 	$scope.searchText = msServices.searchText; // searchText object
 	$scope.messages = msServices.messages // messages singleton object
 	$scope.submitted = msServices.submitted; // submitted singleton object
 	$scope.history = msServices.history; // history singleton object
 	$scope.tableData = []; // Array used for storing filtered data
-  var moviePromise = msServices.getMSData(); //use msServices to get csv data
-  moviePromise.then(function (data) {
-      $scope.movieData = data; // movieData
-  });
-  var moviePromise = msServices.getRssData(); //use msServices to get csv data
-  moviePromise.then(function (data) {
-		$scope.rssData = data; // movieData
-		console.log($scope.rssData)
-	});
+	var moviePromise = msServices.getMSData(); //use msServices to get csv data
+	  moviePromise.then(function (data) {
+	      $scope.movieData = data; // movieData
+	  });
+	  var moviePromise = msServices.getRssData(); //use msServices to get csv data
+	  moviePromise.then(function (data) {
+			$scope.rssData = data; // movieData
+			console.log($scope.rssData)
+		});
 
 
 	$scope.postTum = function () {
@@ -28,28 +26,6 @@ function MSController($scope, $filter, msServices) {
 				$scope.tum = data; // movieData
 		});
 	}
-=======
-=======
->>>>>>> origin/master
-    $scope.display = msServices.display; // show/hide state object
-    $scope.searchText = msServices.searchText; // searchText object
-    $scope.messages = msServices.messages // messages singleton object
-    $scope.submitted = msServices.submitted; // submitted singleton object
-    $scope.history = msServices.history; // history singleton object
-    $scope.tableData = []; // Array used for storing filtered data
-    var moviePromise = msServices.getMSData(); //use msServices to get csv data
-    moviePromise.then(function (data) {
-        $scope.movieData = data; // movieData
-      });
-      var moviePromise = msServices.getRssData(); //use msServices to get csv data
-      moviePromise.then(function (data) {
-          $scope.rssData = data; // movieData
-	  console.log($scope.rssData)
-       });
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 
 	$scope.validateForm = function(searchtext, form, hist) {
 		// function used for validating/posting "searchtext"
@@ -74,7 +50,7 @@ function MSController($scope, $filter, msServices) {
 
 	$scope.postPromise = function (searchtext) {
 		// post searchtext to server
-		var postPromise = msServices.postMs(searchtext) // post searchtext
+		var postPromise = msServices.postmovie(searchtext) // post searchtext
 		postPromise.then(function(data) {
 			$scope.tableData = data.response_data
 			if ($scope.tableData.length === 0) { // post returned 0 results
