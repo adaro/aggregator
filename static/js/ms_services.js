@@ -6,7 +6,7 @@
 var msApp = angular.module('mSearch', ['angulike']);
 msApp.run([
       '$rootScope', function ($rootScope) {
-          $rootScope.facebookAppId = '1568501626697755'; // set your facebook app id here
+          $rootScope.facebookAppId = ''; // set your facebook app id here
       }
   ]);
 //SERVICES
