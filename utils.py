@@ -1,4 +1,4 @@
-#No shebang line, please run in Linux shell % python img_count.py
+#No shebang line, please run in shell e.g) % python2.6 img_count.py
 
 #Python libs
 import threading, urllib2, re
